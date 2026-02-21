@@ -1,0 +1,9 @@
+{
+  "name": "shopify-cli-admin",
+  "version": "1.0.0",
+  "description": "Conversational Shopify Admin API access via shopify app execute and bulk operations",
+  "author": {
+    "name": "Alec Ramos"
+  },
+  "keywords": ["shopify", "graphql", "admin-api", "bulk-operations", "ecommerce"]
+}
