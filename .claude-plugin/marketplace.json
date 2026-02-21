@@ -1,0 +1,20 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "shopify-claude-plugins",
+  "description": "Shopify development plugins for Claude Code",
+  "owner": {
+    "name": "Alec Ramos"
+  },
+  "plugins": [
+    {
+      "name": "shopify-cli-admin",
+      "description": "Conversational Shopify Admin API access via shopify app execute and bulk operations — queries, bulk exports, dev store setup, function testing, and cart creation",
+      "version": "1.0.0",
+      "author": {
+        "name": "Alec Ramos"
+      },
+      "source": "./plugins/shopify-cli-admin",
+      "category": "development"
+    }
+  ]
+}
