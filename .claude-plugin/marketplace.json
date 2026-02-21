@@ -1,6 +1,6 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "storefront-cli-plugins",
+  "name": "storefront-cli-plugin",
   "description": "Claude Code plugins for Shopify Admin API access via the Shopify CLI",
   "owner": {
     "name": "Alec Ramos"

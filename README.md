@@ -20,13 +20,13 @@ Inspired by the [`shopify app execute` and `shopify app bulk execute` features](
 From within Claude Code, add this repository as a plugin marketplace:
 
 ```
-/plugin marketplace add alecramos-sudo/storefront-cli-plugins
+/plugin marketplace add alecramos-sudo/storefront-cli-plugin
 ```
 
 ### Install the plugin
 
 ```
-/plugin install shopify-cli-admin@alecramos-sudo-storefront-cli-plugins
+/plugin install shopify-cli-admin@alecramos-sudo-storefront-cli-plugin
 ```
 
 Or browse available plugins interactively with `/plugin` and go to the **Discover** tab.

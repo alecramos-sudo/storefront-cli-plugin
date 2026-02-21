@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const lines = [
     { text: '$ claude', type: 'input' },
-    { text: '> /plugin marketplace add alecramos-sudo/storefront-cli-plugins', type: 'input' },
-    { text: '  \u2713 Added marketplace: storefront-cli-plugins', type: 'output' },
-    { text: '> /plugin install shopify-cli-admin@alecramos-sudo-storefront-cli-plugins', type: 'input' },
+    { text: '> /plugin marketplace add alecramos-sudo/storefront-cli-plugin', type: 'input' },
+    { text: '  \u2713 Added marketplace: storefront-cli-plugin', type: 'output' },
+    { text: '> /plugin install shopify-cli-admin@alecramos-sudo-storefront-cli-plugin', type: 'input' },
     { text: '  \u2713 Installed: shopify-cli-admin v1.0.0', type: 'output' },
     { text: '> /shopify-cli-admin:shopify-query list all products with prices', type: 'input' },
     { text: '  Running query against Admin API...', type: 'output' },
