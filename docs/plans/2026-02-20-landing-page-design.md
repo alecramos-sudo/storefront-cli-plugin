@@ -1,13 +1,13 @@
-# Shopify Claude Plugins — Landing Page Design
+# Storefront CLI Plugins — Landing Page Design
 
 ## Overview
 
-A public landing page for the shopify-claude-plugins project, hosted on GitHub Pages. Serves as both a human-readable documentation site and an agent-readable install reference.
+A public landing page for the storefront-cli-plugins project, hosted on GitHub Pages. Serves as both a human-readable documentation site and an agent-readable install reference.
 
 ## Hosting
 
 - **Platform**: GitHub Pages from `docs/` directory on `main` branch
-- **URL**: `alecramos-sudo.github.io/shopify-claude-plugins`
+- **URL**: `alecramos-sudo.github.io/storefront-cli-plugins`
 - **Custom domain**: None initially (can add later via CNAME)
 
 ## File Structure
@@ -59,9 +59,9 @@ Flat `#0d1117` — no patterns, no effects, no noise.
 - Terminal types out the install sequence:
   ```
   $ claude
-  > /plugin marketplace add alecramos-sudo/shopify-claude-plugins
-    Added marketplace: shopify-claude-plugins
-  > /plugin install shopify-cli-admin@alecramos-sudo-shopify-claude-plugins
+  > /plugin marketplace add alecramos-sudo/storefront-cli-plugins
+    Added marketplace: storefront-cli-plugins
+  > /plugin install shopify-cli-admin@alecramos-sudo-storefront-cli-plugins
     Installed: shopify-cli-admin v1.0.0
   > /shopify-cli-admin:shopify-query list all products with prices
     Running query against Admin API...

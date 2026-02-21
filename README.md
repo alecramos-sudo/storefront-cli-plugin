@@ -1,13 +1,17 @@
-# Shopify Claude Plugins
+# Storefront CLI Plugins
 
-A [Claude Code](https://docs.anthropic.com/en/docs/claude-code) plugin collection for Shopify development. Provides conversational access to the Shopify Admin API through the Shopify CLI — run GraphQL queries, bulk export data, set up dev stores, test functions, and create test carts, all through natural language.
+A [Claude Code](https://docs.anthropic.com/en/docs/claude-code) plugin collection for Shopify Admin API development. Provides conversational access to the Admin API through the Shopify CLI — run GraphQL queries, bulk export data, set up dev stores, test functions, and create test carts, all through natural language.
+
+> **Disclaimer:** This project is not affiliated with, endorsed by, or sponsored by Shopify Inc. or Anthropic. "Shopify" and "Claude" are registered trademarks of their respective owners. This is an independent community project.
+
+Inspired by the [`shopify app execute` and `shopify app bulk execute` features](https://community.shopify.dev/t/admin-api-and-bulk-operations-in-shopify-cli/29467) introduced in Shopify CLI 3.90.1.
 
 ## Installation
 
 ### Prerequisites
 
 - [Claude Code](https://code.claude.com/docs/en/quickstart) v1.0.33+ (`claude --version` to check)
-- [Shopify CLI](https://shopify.dev/docs/api/shopify-cli) (`shopify version` to verify)
+- [Shopify CLI](https://shopify.dev/docs/api/shopify-cli) **3.90.1+** (`shopify version` to verify) — requires the `app execute` and `app bulk execute` commands
 - A Shopify app with Admin API access (`shopify.app.toml` configured)
 - `jq` (for bulk export CSV transformations)
 
@@ -16,13 +20,13 @@ A [Claude Code](https://docs.anthropic.com/en/docs/claude-code) plugin collectio
 From within Claude Code, add this repository as a plugin marketplace:
 
 ```
-/plugin marketplace add alecramosnv/shopify-claude-plugins
+/plugin marketplace add alecramos-sudo/storefront-cli-plugins
 ```
 
 ### Install the plugin
 
 ```
-/plugin install shopify-cli-admin@alecramosnv-shopify-claude-plugins
+/plugin install shopify-cli-admin@alecramos-sudo-storefront-cli-plugins
 ```
 
 Or browse available plugins interactively with `/plugin` and go to the **Discover** tab.
