@@ -5,13 +5,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const cursor = document.getElementById('cursor');
 
   const lines = [
-    { text: '$ claude', type: 'input' },
-    { text: '> /plugin marketplace add alecramos-sudo/storefront-cli-plugin', type: 'input' },
-    { text: '  \u2713 Added marketplace: storefront-cli-plugin', type: 'output' },
-    { text: '> /plugin install shopify-cli-admin@alecramos-sudo-storefront-cli-plugin', type: 'input' },
-    { text: '  \u2713 Installed: shopify-cli-admin v1.0.0', type: 'output' },
     { text: '> /shopify-cli-admin:shopify-query list all products with prices', type: 'input' },
     { text: '  Running query against Admin API...', type: 'output' },
+    { text: '  ┌─────────────────────┬────────┐', type: 'output' },
+    { text: '  │ Title               │ Price  │', type: 'output' },
+    { text: '  ├─────────────────────┼────────┤', type: 'output' },
+    { text: '  │ Classic Tee         │ $29.00 │', type: 'output' },
+    { text: '  │ Everyday Hoodie     │ $65.00 │', type: 'output' },
+    { text: '  └─────────────────────┴────────┘', type: 'output' },
+    { text: '> /shopify-cli-admin:shopify-bulk-export products to CSV', type: 'input' },
+    { text: '  ✓ Exported 1,247 products → products_export.csv', type: 'output' },
+    { text: '> /shopify-cli-admin:shopify-dev-store-init', type: 'input' },
+    { text: '  ✓ Created 50 products with images and inventory', type: 'output' },
   ];
 
   function sleep(ms) {
@@ -82,6 +87,19 @@ document.addEventListener('DOMContentLoaded', () => {
       } catch {
         // Clipboard API not available — fail silently
       }
+    });
+  });
+
+  // --- Tab ARIA Sync (progressive enhancement) ---
+
+  const tabRadios = document.querySelectorAll('.tab-radio');
+  const tabLabels = document.querySelectorAll('.tab-label');
+
+  tabRadios.forEach(radio => {
+    radio.addEventListener('change', () => {
+      tabLabels.forEach(label => {
+        label.setAttribute('aria-selected', label.getAttribute('for') === radio.id ? 'true' : 'false');
+      });
     });
   });
 });

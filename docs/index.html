@@ -21,8 +21,15 @@
     </a>
   </header>
 
-  <!-- Hero: Terminal Animation -->
+  <!-- Hero -->
   <section class="hero">
+    <h1 class="tagline">Conversational Shopify Admin API access for Claude Code</h1>
+    <p class="hero-sub">Query products, bulk export data, set up dev stores — all through natural language.</p>
+  </section>
+
+  <!-- Demo -->
+  <section class="section" id="demo">
+    <h2>See it in action</h2>
     <div class="terminal">
       <div class="terminal-chrome">
         <span class="terminal-dot red"></span>
@@ -35,45 +42,54 @@
         <span class="cursor" id="cursor">█</span>
       </div>
     </div>
-    <p class="tagline">Conversational Shopify Admin API access for Claude Code</p>
   </section>
 
-  <!-- Human Install -->
+  <!-- Install (tabbed) -->
   <section class="section" id="install">
     <h2>Install</h2>
-    <p class="section-desc">Requires <a href="https://code.claude.com/docs/en/quickstart">Claude Code</a> v1.0.33+, <a href="https://shopify.dev/docs/api/shopify-cli">Shopify CLI</a> <strong>3.90.1+</strong>, a configured <code>shopify.app.toml</code>, and <code>jq</code>.</p>
+    <div class="tabs">
+      <input type="radio" name="install-tab" id="tab-human" class="tab-radio" checked>
+      <label for="tab-human" class="tab-label" role="tab" aria-selected="true">Human</label>
 
-    <h3>1. Add the marketplace</h3>
-    <div class="code-block">
-      <code>/plugin marketplace add alecramos-sudo/storefront-cli-plugin</code>
-      <button class="copy-btn" data-copy="/plugin marketplace add alecramos-sudo/storefront-cli-plugin" aria-label="Copy command">
-        <svg class="icon-copy" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"/><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"/></svg>
-        <svg class="icon-check" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="display:none"><path d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"/></svg>
-      </button>
+      <input type="radio" name="install-tab" id="tab-agent" class="tab-radio">
+      <label for="tab-agent" class="tab-label" role="tab" aria-selected="false">Agent / AI</label>
+
+      <!-- Human panel -->
+      <div class="tab-panel" role="tabpanel">
+        <p class="section-desc">Requires <a href="https://code.claude.com/docs/en/quickstart">Claude Code</a> v1.0.33+, <a href="https://shopify.dev/docs/api/shopify-cli">Shopify CLI</a> <strong>3.90.1+</strong>, a configured <code>shopify.app.toml</code>, and <code>jq</code>.</p>
+
+        <h3>1. Add the marketplace</h3>
+        <div class="code-block">
+          <code>/plugin marketplace add alecramos-sudo/storefront-cli-plugin</code>
+          <button class="copy-btn" data-copy="/plugin marketplace add alecramos-sudo/storefront-cli-plugin" aria-label="Copy command">
+            <svg class="icon-copy" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"/><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"/></svg>
+            <svg class="icon-check" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="display:none"><path d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"/></svg>
+          </button>
+        </div>
+
+        <h3>2. Install the plugin</h3>
+        <div class="code-block">
+          <code>/plugin install shopify-cli-admin@alecramos-sudo-storefront-cli-plugin</code>
+          <button class="copy-btn" data-copy="/plugin install shopify-cli-admin@alecramos-sudo-storefront-cli-plugin" aria-label="Copy command">
+            <svg class="icon-copy" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"/><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"/></svg>
+            <svg class="icon-check" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="display:none"><path d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"/></svg>
+          </button>
+        </div>
+
+        <p class="alt-install">Or browse interactively: <code>/plugin</code> → <strong>Discover</strong> tab</p>
+      </div>
+
+      <!-- Agent panel -->
+      <div class="tab-panel" role="tabpanel" data-agent-readable="true">
+        <p class="section-desc">If you are an AI coding agent, follow these steps in Claude Code:</p>
+        <ol class="agent-steps">
+          <li>Verify prerequisites: <code>shopify version</code> (Shopify CLI installed), <code>jq --version</code> (jq installed), <code>shopify.app.toml</code> exists in project</li>
+          <li>Run: <code>/plugin marketplace add alecramos-sudo/storefront-cli-plugin</code></li>
+          <li>Run: <code>/plugin install shopify-cli-admin@alecramos-sudo-storefront-cli-plugin</code></li>
+          <li>Verify: <code>/shopify-cli-admin:shopify-query list 1 product</code></li>
+        </ol>
+      </div>
     </div>
-
-    <h3>2. Install the plugin</h3>
-    <div class="code-block">
-      <code>/plugin install shopify-cli-admin@alecramos-sudo-storefront-cli-plugin</code>
-      <button class="copy-btn" data-copy="/plugin install shopify-cli-admin@alecramos-sudo-storefront-cli-plugin" aria-label="Copy command">
-        <svg class="icon-copy" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"/><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"/></svg>
-        <svg class="icon-check" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="display:none"><path d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"/></svg>
-      </button>
-    </div>
-
-    <p class="alt-install">Or browse interactively: <code>/plugin</code> → <strong>Discover</strong> tab</p>
-  </section>
-
-  <!-- Agent Install -->
-  <section class="section" id="agent-install" data-agent-readable="true">
-    <h2>Agent Installation</h2>
-    <p class="section-desc">If you are an AI coding agent, follow these steps in Claude Code:</p>
-    <ol class="agent-steps">
-      <li>Verify prerequisites: <code>shopify version</code> (Shopify CLI installed), <code>jq --version</code> (jq installed), <code>shopify.app.toml</code> exists in project</li>
-      <li>Run: <code>/plugin marketplace add alecramos-sudo/storefront-cli-plugin</code></li>
-      <li>Run: <code>/plugin install shopify-cli-admin@alecramos-sudo-storefront-cli-plugin</code></li>
-      <li>Verify: <code>/shopify-cli-admin:shopify-query list 1 product</code></li>
-    </ol>
   </section>
 
   <!-- Commands -->

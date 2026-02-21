@@ -106,13 +106,20 @@ h3 {
   max-width: var(--max-width);
   margin: var(--spacing-2xl) auto var(--spacing-xl);
   padding: 0 var(--spacing-lg);
+  text-align: center;
 }
 
 .tagline {
-  margin-top: var(--spacing-lg);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.hero-sub {
+  margin-top: var(--spacing-sm);
   color: var(--text-muted);
   font-size: 0.875rem;
-  text-align: center;
 }
 
 /* ===== Terminal ===== */
@@ -359,6 +366,63 @@ h3 {
   color: var(--border);
 }
 
+/* ===== Demo Terminal Override ===== */
+
+#demo .terminal-body {
+  min-height: 260px;
+}
+
+/* ===== Tabs ===== */
+
+.tabs {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  grid-template-rows: auto 1fr;
+}
+
+.tab-radio {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.tab-label {
+  grid-row: 1;
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  user-select: none;
+}
+
+.tab-label:hover {
+  color: var(--text);
+}
+
+.tab-radio:checked + .tab-label {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.tab-panel {
+  display: none;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  padding-top: var(--spacing-lg);
+}
+
+/* Show panel when its corresponding radio is checked */
+.tab-radio:nth-of-type(1):checked ~ .tab-panel:nth-of-type(1) {
+  display: block;
+}
+
+.tab-radio:nth-of-type(2):checked ~ .tab-panel:nth-of-type(2) {
+  display: block;
+}
+
 /* ===== Animation ===== */
 
 @keyframes blink {
@@ -391,5 +455,18 @@ h3 {
 
   h2 {
     font-size: 0.875rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+
+  #demo .terminal-body {
+    min-height: 220px;
+  }
+
+  .tab-label {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.75rem;
   }
 }
