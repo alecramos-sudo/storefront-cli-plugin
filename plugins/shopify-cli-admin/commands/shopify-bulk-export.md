@@ -12,12 +12,12 @@ The user wants to export data from their Shopify store using bulk operations.
    - If unclear, ask which resource to export
 2. Construct the bulk query (consult references/bulk-operations.md for patterns)
 3. Show the query and confirm with the user
-4. Run: `shopify app bulk execute --query '<bulk_query>' --store <store>`
-5. Wait for the bulk operation to complete
-6. Transform the JSONL output to CSV using:
+4. Run: `shopify app bulk execute --query '<bulk_query>' --store <store> --watch --output-file /tmp/bulk-results.jsonl`
+   (The `--watch` flag waits for completion and `--output-file` writes results directly, avoiding manual polling)
+5. Transform the JSONL output to CSV using:
    `bash ${CLAUDE_PLUGIN_ROOT}/scripts/bulk-to-csv.sh <output.jsonl> <resource-type>`
-7. Report: row count, output file location, column summary
-8. Offer to adjust columns, add filters, or re-export
+6. Report: row count, output file location, column summary
+7. Offer to adjust columns, add filters, or re-export
 
 For custom filters or field selections, modify the bulk query accordingly.
 Always confirm the target store before running.

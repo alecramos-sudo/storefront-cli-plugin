@@ -1,5 +1,6 @@
 .claude/
 .DS_Store
+shopify.app.toml
 node_modules/
 *.swp
 *.swo

@@ -61,6 +61,62 @@ Conversational Shopify Admin API access via `shopify app execute` and bulk opera
 > /shopify-cli-admin:shopify-cart-test 3 products over $50
 ```
 
+## Demo Walkthrough
+
+A step-by-step walkthrough using a real Shopify dev store. Run these inside Claude Code with the plugin loaded.
+
+### 0. Setup — connect to your store
+
+If you don't have a Shopify app configured yet, create one in the Partner Dashboard and get your client ID. Then verify your CLI is working:
+
+```
+/shopify-cli-admin:shopify-query what's the shop name?
+```
+
+Claude will run `shopify app execute --query '{ shop { name id } }'` and prompt you for your store handle if needed. You should see your store's name in the response.
+
+### 1. Query products
+
+```
+/shopify-cli-admin:shopify-query list the first 5 products with title, price, and inventory
+```
+
+### 2. Search for specific products
+
+```
+/shopify-cli-admin:shopify-query find products with "shirt" in the title
+```
+
+### 3. Check a single order
+
+```
+/shopify-cli-admin:shopify-query show me the most recent order with line items and shipping address
+```
+
+### 4. Bulk export products to CSV
+
+```
+/shopify-cli-admin:shopify-bulk-export products
+```
+
+This runs a bulk operation, waits for completion, downloads the JSONL, and transforms it to CSV using the included `bulk-to-csv.sh` script.
+
+### 5. Create a test cart
+
+```
+/shopify-cli-admin:shopify-cart-test 2 products
+```
+
+Claude will query your store for products, pick variants, and generate a cart permalink URL you can open in a browser.
+
+### 6. Initialize a dev store with sample data
+
+```
+/shopify-cli-admin:shopify-dev-store-init 3 products with 2 variants each
+```
+
+Claude will generate `productCreate` mutations and execute them one by one, reporting each created product.
+
 ## Project Structure
 
 ```

@@ -467,7 +467,9 @@ shopify app execute --query '{ locations(first: 10) { edges { node { id name isA
 
 #### productCreate
 
-Create a new product with variants. Uses the `productCreate` mutation which accepts a `ProductInput`.
+Create a new product. Uses the `productCreate` mutation which accepts a `ProductInput`. A default variant is created automatically.
+
+> **Note (2025-01 API):** The `variants` field was removed from `ProductInput`. Products are created with a default variant. To add or customize variants after creation, use `productVariantsBulkCreate`.
 
 ```graphql
 mutation productCreate($input: ProductInput!) {
@@ -506,37 +508,66 @@ Variables:
     "productType": "Tools",
     "vendor": "Angela Caglia",
     "tags": ["skincare", "tools", "facial-roller"],
-    "status": "DRAFT",
-    "variants": [
-      {
-        "title": "Standard",
-        "price": "68.00",
-        "sku": "AC-RQ-ROLLER-001",
-        "inventoryQuantities": [
-          {
-            "availableQuantity": 50,
-            "locationId": "gid://shopify/Location/LOCATION_ID"
-          }
-        ]
-      },
-      {
-        "title": "Travel Size",
-        "price": "42.00",
-        "sku": "AC-RQ-ROLLER-TRAVEL",
-        "inventoryQuantities": [
-          {
-            "availableQuantity": 100,
-            "locationId": "gid://shopify/Location/LOCATION_ID"
-          }
-        ]
-      }
-    ]
+    "status": "DRAFT"
   }
 }
 ```
 
 ```bash
-shopify app execute --query 'mutation productCreate($input: ProductInput!) { productCreate(input: $input) { product { id title handle status variants(first: 10) { edges { node { id title price sku } } } } userErrors { field message } } }' --variables '{"input":{"title":"Rose Quartz Facial Roller","descriptionHtml":"<p>Handcrafted rose quartz facial roller.</p>","productType":"Tools","vendor":"Angela Caglia","tags":["skincare","tools"],"status":"DRAFT","variants":[{"title":"Standard","price":"68.00","sku":"AC-RQ-ROLLER-001"}]}}' --store STORE_HANDLE
+shopify app execute --query 'mutation productCreate($input: ProductInput!) { productCreate(input: $input) { product { id title handle status variants(first: 10) { edges { node { id title price sku } } } } userErrors { field message } } }' --variables '{"input":{"title":"Rose Quartz Facial Roller","descriptionHtml":"<p>Handcrafted rose quartz facial roller.</p>","productType":"Tools","vendor":"Angela Caglia","tags":["skincare","tools"],"status":"DRAFT"}}' --store STORE_HANDLE
+```
+
+#### productVariantsBulkCreate
+
+Add variants to an existing product. Use after `productCreate` to set up multiple variants with pricing and inventory.
+
+```graphql
+mutation productVariantsBulkCreate($productId: ID!, $variants: [ProductVariantsBulkInput!]!) {
+  productVariantsBulkCreate(productId: $productId, variants: $variants) {
+    productVariants {
+      id
+      title
+      price
+      sku
+      selectedOptions {
+        name
+        value
+      }
+    }
+    userErrors {
+      field
+      message
+    }
+  }
+}
+```
+
+Variables:
+
+```json
+{
+  "productId": "gid://shopify/Product/PRODUCT_ID",
+  "variants": [
+    {
+      "price": "68.00",
+      "sku": "AC-RQ-ROLLER-001",
+      "optionValues": [
+        { "optionName": "Size", "name": "Standard" }
+      ]
+    },
+    {
+      "price": "42.00",
+      "sku": "AC-RQ-ROLLER-TRAVEL",
+      "optionValues": [
+        { "optionName": "Size", "name": "Travel" }
+      ]
+    }
+  ]
+}
+```
+
+```bash
+shopify app execute --query 'mutation productVariantsBulkCreate($productId: ID!, $variants: [ProductVariantsBulkInput!]!) { productVariantsBulkCreate(productId: $productId, variants: $variants) { productVariants { id title price sku } userErrors { field message } } }' --variables '{"productId":"gid://shopify/Product/PRODUCT_ID","variants":[{"price":"68.00","sku":"AC-RQ-ROLLER-001","optionValues":[{"optionName":"Size","name":"Standard"}]},{"price":"42.00","sku":"AC-RQ-ROLLER-TRAVEL","optionValues":[{"optionName":"Size","name":"Travel"}]}]}' --store STORE_HANDLE
 ```
 
 #### productUpdate
