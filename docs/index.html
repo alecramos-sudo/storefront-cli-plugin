@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Storefront CLI Plugins</title>
   <meta name="description" content="Conversational Shopify Admin API access for Claude Code. Query products, bulk export data, set up dev stores — all through natural language.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="storefront-cli-plugin">
+  <meta property="og:description" content="Conversational Shopify Admin API access for Claude Code. Query products, bulk export data, set up dev stores — all through natural language.">
+  <meta property="og:image" content="https://alecramos-sudo.github.io/storefront-cli-plugin/og-image.svg">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="storefront-cli-plugin">
+  <meta name="twitter:description" content="Conversational Shopify Admin API access for Claude Code.">
+  <meta name="twitter:image" content="https://alecramos-sudo.github.io/storefront-cli-plugin/og-image.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -55,7 +66,7 @@
       <label for="tab-agent" class="tab-label" role="tab" aria-selected="false">Agent / AI</label>
 
       <!-- Human panel -->
-      <div class="tab-panel" role="tabpanel">
+      <div class="tab-panel panel-human" role="tabpanel">
         <p class="section-desc">Requires <a href="https://code.claude.com/docs/en/quickstart">Claude Code</a> v1.0.33+, <a href="https://shopify.dev/docs/api/shopify-cli">Shopify CLI</a> <strong>3.90.1+</strong>, a configured <code>shopify.app.toml</code>, and <code>jq</code>.</p>
 
         <h3>1. Add the marketplace</h3>
@@ -80,7 +91,7 @@
       </div>
 
       <!-- Agent panel -->
-      <div class="tab-panel" role="tabpanel" data-agent-readable="true">
+      <div class="tab-panel panel-agent" role="tabpanel" data-agent-readable="true">
         <p class="section-desc">If you are an AI coding agent, follow these steps in Claude Code:</p>
         <ol class="agent-steps">
           <li>Verify prerequisites: <code>shopify version</code> (Shopify CLI installed), <code>jq --version</code> (jq installed), <code>shopify.app.toml</code> exists in project</li>
