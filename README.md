@@ -4,18 +4,36 @@ A [Claude Code](https://docs.anthropic.com/en/docs/claude-code) plugin collectio
 
 ## Installation
 
-Install the plugin from within Claude Code:
-
-```
-/install-plugin https://github.com/alecramosnv/shopify-claude-plugins
-```
-
 ### Prerequisites
 
-- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) CLI
+- [Claude Code](https://code.claude.com/docs/en/quickstart) v1.0.33+ (`claude --version` to check)
 - [Shopify CLI](https://shopify.dev/docs/api/shopify-cli) (`shopify version` to verify)
 - A Shopify app with Admin API access (`shopify.app.toml` configured)
 - `jq` (for bulk export CSV transformations)
+
+### Add the marketplace
+
+From within Claude Code, add this repository as a plugin marketplace:
+
+```
+/plugin marketplace add alecramosnv/shopify-claude-plugins
+```
+
+### Install the plugin
+
+```
+/plugin install shopify-cli-admin@alecramosnv-shopify-claude-plugins
+```
+
+Or browse available plugins interactively with `/plugin` and go to the **Discover** tab.
+
+### Local development
+
+To test the plugin locally without installing from a marketplace:
+
+```bash
+claude --plugin-dir ./plugins/shopify-cli-admin
+```
 
 ## Plugins
 
@@ -27,20 +45,20 @@ Conversational Shopify Admin API access via `shopify app execute` and bulk opera
 
 | Command | Description |
 |---------|-------------|
-| `/shopify-query` | Run an ad-hoc GraphQL query against the Admin API |
-| `/shopify-bulk-export` | Export large datasets (products, orders, customers) to CSV |
-| `/shopify-dev-store-init` | Set up a dev store with products, inventory, and images |
-| `/shopify-function-test` | Activate and test Shopify Functions without a UI |
-| `/shopify-cart-test` | Create test carts with specific products |
+| `/shopify-cli-admin:shopify-query` | Run an ad-hoc GraphQL query against the Admin API |
+| `/shopify-cli-admin:shopify-bulk-export` | Export large datasets (products, orders, customers) to CSV |
+| `/shopify-cli-admin:shopify-dev-store-init` | Set up a dev store with products, inventory, and images |
+| `/shopify-cli-admin:shopify-function-test` | Activate and test Shopify Functions without a UI |
+| `/shopify-cli-admin:shopify-cart-test` | Create test carts with specific products |
 
 #### Examples
 
 ```
-> /shopify-query list all products with their prices
-> /shopify-bulk-export products
-> /shopify-dev-store-init 10 products with 3 variants each
-> /shopify-function-test my-discount-function
-> /shopify-cart-test 3 products over $50
+> /shopify-cli-admin:shopify-query list all products with their prices
+> /shopify-cli-admin:shopify-bulk-export products
+> /shopify-cli-admin:shopify-dev-store-init 10 products with 3 variants each
+> /shopify-cli-admin:shopify-function-test my-discount-function
+> /shopify-cli-admin:shopify-cart-test 3 products over $50
 ```
 
 ## Project Structure

@@ -1,0 +1,2 @@
+{"id":"gid://shopify/Customer/1","firstName":"Alice","lastName":"Smith","email":"alice@example.com","numberOfOrders":"3","amountSpent":{"amount":"150.00"},"addresses":[{"address1":"123 Main St","city":"Portland","province":"OR","country":"US","zip":"97201"}]}
+{"id":"gid://shopify/Customer/2","firstName":"Bob","lastName":"Jones","email":"bob@example.com","numberOfOrders":"1","amountSpent":{"amount":"14.99"},"addresses":[]}

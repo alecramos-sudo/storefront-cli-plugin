@@ -1,0 +1,4 @@
+{"id":"gid://shopify/Order/1001","name":"#1001","email":"alice@example.com","createdAt":"2025-01-15T10:00:00Z","totalPriceSet":{"shopMoney":{"amount":"59.98","currencyCode":"USD"}}}
+{"id":"gid://shopify/LineItem/5001","title":"Test T-Shirt - Small","quantity":2,"sku":"TSH-SM","__parentId":"gid://shopify/Order/1001"}
+{"id":"gid://shopify/Order/1002","name":"#1002","email":"bob@example.com","createdAt":"2025-01-16T12:00:00Z","totalPriceSet":{"shopMoney":{"amount":"14.99","currencyCode":"USD"}}}
+{"id":"gid://shopify/LineItem/5002","title":"Test Mug","quantity":1,"sku":"MUG-01","__parentId":"gid://shopify/Order/1002"}

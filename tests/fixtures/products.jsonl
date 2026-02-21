@@ -1,0 +1,5 @@
+{"id":"gid://shopify/Product/1","title":"Test T-Shirt","handle":"test-t-shirt","status":"ACTIVE","vendor":"TestVendor","productType":"Apparel"}
+{"id":"gid://shopify/ProductVariant/101","title":"Small","sku":"TSH-SM","price":"29.99","__parentId":"gid://shopify/Product/1"}
+{"id":"gid://shopify/ProductVariant/102","title":"Medium","sku":"TSH-MD","price":"29.99","__parentId":"gid://shopify/Product/1"}
+{"id":"gid://shopify/Product/2","title":"Test Mug","handle":"test-mug","status":"ACTIVE","vendor":"TestVendor","productType":"Accessories"}
+{"id":"gid://shopify/ProductVariant/201","title":"Default","sku":"MUG-01","price":"14.99","__parentId":"gid://shopify/Product/2"}
